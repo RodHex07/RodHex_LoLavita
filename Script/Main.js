@@ -32,5 +32,5 @@ document.getElementById('top-left-button').addEventListener('click', function ()
 
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.getElementById("video");
-    video.volume = 0.3; // %40 ses seviyesi
+    video.volume = 0.2; // %40 ses seviyesi
 });
