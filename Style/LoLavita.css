@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    display: none;
+}
+
+.top-left-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    display: none;
+}
+
+.top-left-button button {
+    padding: 10px 20px;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 1px 10px black;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+.top-left-button button:hover {
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 3rem;
+    box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 1s ease-in-out;
+}
+
+.card.show {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#click-message {
+    display: none; /* İlk açılışta gizle */
+}
+
+.overlay.clicked #click-message {
+    display: block; /* Kullanıcı tıkladığında göster */
+}
+
+
+.card .banner {
+    background-image: url("../Image/MainProfile.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.card .profile-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -2.5rem;
+}
+
+.card .profile {
+    width: 7rem;
+    height: 7rem;
+    background-image: url("../Image/LoLavita.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card .profile:hover {
+    transform: scale(1.1);
+}
+
+.card h2.name {
+    margin: 2rem 0 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.card .title {
+    text-align: center;
+}
+
+.card .actions {
+    padding: 0 2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    order: 99;
+}
+
+.card .actions .discord-info {
+    padding: 0 0 1rem;
+    display: flex;
+}
+
+.card .actions .discord-info h2 {
+    text-align: center;
+    width: 50%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card .actions .discord-info h2 a {
+    text-decoration: none;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    transition: background-color 100ms ease-in-out;
+}
+
+.card .actions .discord-info h2 a .bi {
+    color: #000;
+    font-size: 2rem;
+}
+
+.card .actions .discord-info h2 a:hover {
+    background-color: #f2f2f2;
+}
+
+.card .actions .discord-info h2 a:hover span {
+    color: #007ad6;
+}
+
+.card .actions .discord-btn button {
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    background-color: #7289d9;
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 1.5rem / 50%;
+    transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    cursor: pointer;
+}
+
+.card .actions .discord-btn button:hover {
+    background-color: #7289d9;
+    transform: scale(1.1);
+}
+
+.card .actions .discord-btn button:active {
+    background-color: #7289d9;
+    transform: scale(1);
+}
+
+.card .desc {
+    text-align: justify;
+    padding: 0 2rem 2.5rem;
+    order: 100;
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        width: 80%;
+    }
+
+    .card .banner {
+        height: 8rem;
+    }
+
+    .card .profile {
+        width: 7rem;
+        height: 7rem;
+    }
+}
+
+@keyframes transitionAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+
+    100% {
+        background-position: 500%;
+    }
+}
