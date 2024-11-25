@@ -39,5 +39,5 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             card.classList.remove('fade-out');
         }, 8000); // 4000ms = 4 saniye
-    }, 11000); // 10000ms = 10 saniye
+    }, 13000); // 10000ms = 10 saniye
 });
