@@ -33,4 +33,11 @@ document.getElementById('top-left-button').addEventListener('click', function ()
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.getElementById("video");
     video.volume = 0.2; // %40 ses seviyesi
+    const card = document.getElementById('card');
+    setInterval(() => {
+        card.classList.add('fade-out'); 
+        setTimeout(() => {
+            card.classList.remove('fade-out');
+        }, 4000); // 4000ms = 4 saniye
+    }, 10000); // 10000ms = 10 saniye
 });
